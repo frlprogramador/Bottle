@@ -17,16 +17,20 @@ Utilizamos um arquivo Dotenv (.env) para configurar parâmetros na API. Este arq
 
 Foi utilizado os seguintes parametros:
 
-PORT
+**PORT**
 > Neste parâmetro, deve ser colocado a porta para acesso ao EndPoint da API
 
-MODEL
-> Neste parâmetro, deve ser colocado o caminho do arquivo do modelo treinado que foi baixado do link.
+**MODEL**
+> Neste parâmetro, deve ser colocado o caminho do arquivo do modelo treinado que foi baixado do link
 
-* TH_CONFIDENCE_CAP = 0.65
-* TH_CONFIDENCE_BOTTLE = 0.50
-* LOG_FILE_PATH = bottle.log 
+**TH_CONFIDENCE_CAP**
+> Neste parâmetro, deve ser um valor de Threshold para a detecção das tampas das garrafas
 
+**TH_CONFIDENCE_BOTTLE**
+> Neste parâmetro, deve ser um valor de Threshold para a detecção dos bicos das garrafas
+
+**LOG_FILE_PATH** 
+> Neste parâmetro, deve ser colocado o caminho para salvar o arquivo de Log da API
 
 
 
