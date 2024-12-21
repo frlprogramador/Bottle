@@ -20,16 +20,16 @@ Foi utilizado os seguintes parametros:
 ##### **PORT**
 > Neste parâmetro, deve ser colocado a porta para acesso ao EndPoint da API
 
-**MODEL**
+##### **MODEL**
 > Neste parâmetro, deve ser colocado o caminho do arquivo do modelo treinado que foi baixado do link
 
-**TH_CONFIDENCE_CAP**
+##### **TH_CONFIDENCE_CAP**
 > Neste parâmetro, deve ser um valor de Threshold para a detecção das tampas das garrafas
 
-**TH_CONFIDENCE_BOTTLE**
+##### **TH_CONFIDENCE_BOTTLE**
 > Neste parâmetro, deve ser um valor de Threshold para a detecção dos bicos das garrafas
 
-**LOG_FILE_PATH** 
+##### **LOG_FILE_PATH** 
 > Neste parâmetro, deve ser colocado o caminho para salvar o arquivo de Log da API
 
 
