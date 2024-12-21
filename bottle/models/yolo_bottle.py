@@ -2,14 +2,13 @@ from ultralytics import YOLO
 import torch
 import os
 import time
+import datetime
 import logging
 import pandas as pd
 
 class YoloBottle:
     def __init__(self):
-
         self.logger = logging.getLogger(__name__)
-        
         self.logger.info('Available Cuda')
         if torch.cuda.is_available():
             self.logger.info('Cuda is active')
@@ -31,30 +30,24 @@ class YoloBottle:
 
     
     def predict(self, image):
-        start = time.time()
+        start = datetime.datetime.now()
         
-        
-        self.logger.debug('Start predict: ' + str(self.convert_to_hms_format(start)))
-
-
-        self.logger.debug('Before Predict')
+        self.logger.info('Start predict: ' + str(start))
         results = self.model.predict(image)
-        self.logger.debug('After Predict')
-
+        self.logger.info('After Predict')
+        
         existCap = False
         confidence = 0
         confidenceOpen = 0
         existBottle = False
-
-
-        self.logger.debug('Results Len: ' + str(len(results)))
-
+        
+        self.logger.info('Results Len: ' + str(len(results)))
 
         for result in results:
             boxes = result.boxes  # Boxes object for bounding box outputs
             for box in boxes:
                 if box.cls == 1: ##Cap
-                    self.logger.debug('Box Cap found in Box - Confidence = ' + str(float(box.conf)))
+                    self.logger.info('Box Cap found in Box - Confidence = ' + str(float(box.conf)))
                     if box.conf > self.threshold_cap:                       
                         existCap = True
                         if box.conf > confidence:                        
@@ -62,30 +55,20 @@ class YoloBottle:
                 else:
                     if box.conf > self.threshold_bottle:
 
-                        self.logger.debug('Bootle found in Box - Confidence = ' + str(float(box.conf)))
+                        self.logger.info('Bootle found in Box - Confidence = ' + str(float(box.conf)))
                         existBottle = True
                         if box.conf > confidenceOpen:
                             confidenceOpen = float(box.conf) 
             if existCap == False:
                 confidence = confidenceOpen
-        done = time.time()
-        self.logger.debug('Done predict: ' + str(self.convert_to_hms_format(done)))
- 
-        elapsed = done - start
-        self.logger.debug('Elapsed predict: ' + str(self.convert_to_hms_format(elapsed)))
-
-        self.logger.debug('Return Predict: (existCap, confidence, existBottle, elapsed) =  (' +  str(existCap) + ", " +  str(confidence) + ", " + str(existBottle) + ", " + str(elapsed) + ")")
-
-
+        done = datetime.datetime.now()        
+        self.logger.info('Done predict: ' + str(done))
+        elapsed = str(done - start)
+        self.logger.info('Elapsed predict: ' + elapsed)
+        self.logger.info('Return Predict: (existCap, confidence, existBottle, elapsed) =  (' +  str(existCap) + ", " +  str(confidence) + ", " + str(existBottle) + ", " + elapsed + ")")
         return (existCap, confidence, existBottle, elapsed)
     
-    def convert_to_hms_format(self, sec):
-        sec = sec % (24 * 3600)
-        hour = sec // 3600
-        sec %= 3600
-        min = sec // 60
-        sec %= 60
-        return "%02d:%02d:%02d" % (hour, min, sec) 
+
     
                         
             
