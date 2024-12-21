@@ -65,9 +65,9 @@ No BODY da requisição, deve-se mandar a imagem de forma binária com o seguint
 Podemos ver um exemplo executando no Postman:
 
 
-```
+
 ![](/images/postman.png)
-```
+
 
 
 
