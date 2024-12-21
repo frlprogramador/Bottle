@@ -11,6 +11,8 @@ Foi colocado o modelo em um link do OneDrive pelo fato do seu tamanho ser maior 
 - [link modelo](https://1drv.ms/u/c/25c1ffdcff23db20/EbEWmFG5FFJGsEz9eP7CsE4BGWlUllcvYwr-tc1V88d-RQ?e=T1No8n)
 
 
+
+
 ## 2. Arquivo de configuração
 
 Utilizamos um arquivo Dotenv (.env) para configurar parâmetros na API. Este arquivo se encontra no diretório raiz da aplicação.
