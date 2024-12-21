@@ -66,7 +66,7 @@ Podemos ver um exemplo executando no Postman:
 
 
 
-![](images\postman.png)
+![](/images/postman.png)
 
 
 
