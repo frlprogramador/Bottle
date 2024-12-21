@@ -159,3 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 content/models/garrafa.pt
+/DotNET/ConsomeAPIBottle/.vs
+/DotNET/ConsomeAPIBottle/ConsomeAPIBottle/bin
+/DotNET/ConsomeAPIBottle/ConsomeAPIBottle/obj

@@ -36,7 +36,7 @@ class BottleResponse(Resource):
             im = Image.open(image)
             self.logger.debug("Open Image size: " + str(im.size))
             
-            status, confidence, existBottle, elapsed = self.model.predict(im)
+            status, confidence, existBottle, elapsed, boxCap = self.model.predict(im)
             self.logger.info("After Predict (status, confidence, existsBottle, elapsed): " + str(status) + ", " + str(confidence) + ", " + str(existBottle) + ", " + str(elapsed) + ")")
 
             if existBottle == False:
@@ -54,7 +54,7 @@ class BottleResponse(Resource):
                 status=500,
                 mimetype='application/json'
             ) 
-        classification = ClassificationResponse(status, confidence, elapsed)
+        classification = ClassificationResponse(status, confidence, elapsed, boxCap)
         self.logger.info("Response Ok: (200) -> " + json.dumps(classification.__dict__) )
         return Response(
             response= json.dumps(classification.__dict__),
@@ -82,7 +82,8 @@ class ErrorResponse:
         self.Error = message
 
 class ClassificationResponse:
-    def __init__(self, bottleStatus, confidence, elapsedTime ):
+    def __init__(self, bottleStatus, confidence, elapsedTime, boxCap ):
         self.Bottle_Status= bottleStatus
         self.Confidence = confidence
         self.ElapsedTime = elapsedTime
+        self.BoxCap = boxCap

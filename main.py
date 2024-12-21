@@ -17,7 +17,7 @@ def main():
     logger.info('Before Create Model YoloBottle')
     model = YoloBottle()
     logger.info('After Create Model YoloBottle')
-    api.add_resource(BottleResponse, '/bootle',
+    api.add_resource(BottleResponse, '/bottle',
                      resource_class_kwargs={ 'model': model })
     app.run(debug=True, port=os.environ['PORT'])
 

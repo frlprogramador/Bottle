@@ -31,11 +31,12 @@ class YoloBottle:
     
     def predict(self, image):
         start = datetime.datetime.now()
+        boxResult = []
         
         self.logger.info('Start predict: ' + str(start))
         results = self.model.predict(image)
         self.logger.info('After Predict')
-        
+
         existCap = False
         confidence = 0
         confidenceOpen = 0
@@ -51,7 +52,9 @@ class YoloBottle:
                     if box.conf > self.threshold_cap:                       
                         existCap = True
                         if box.conf > confidence:                        
-                            confidence = float(box.conf)                       
+                            confidence = float(box.conf)   
+                            if(len(box.xyxy) > 0):
+                                boxResult = (box.xyxy[0].to("cpu")).numpy().tolist()                    
                 else:
                     if box.conf > self.threshold_bottle:
 
@@ -66,7 +69,7 @@ class YoloBottle:
         elapsed = str(done - start)
         self.logger.info('Elapsed predict: ' + elapsed)
         self.logger.info('Return Predict: (existCap, confidence, existBottle, elapsed) =  (' +  str(existCap) + ", " +  str(confidence) + ", " + str(existBottle) + ", " + elapsed + ")")
-        return (existCap, confidence, existBottle, elapsed)
+        return (existCap, confidence, existBottle, elapsed, boxResult)
     
 
     
