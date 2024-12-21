@@ -122,3 +122,6 @@ O arquivo que de configuração do treinamento se encontra no seguinte endereço
 > train\yoloBottleTrain.yaml
 
 Dentro da pasta **train\trainFiles** se encontra os arquivos de imagens e labels para treinamento e validação. 
+
+O arquivo pré treinado do YOLO **yolo11x.pt** pode ser baixado no link a seguir:
+>  [YOLO 11x](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt)
