@@ -9,9 +9,9 @@ model = YOLO("yolo11x.pt")
 
 if __name__ == '__main__':
     freeze = 24
-    freeze = [f"model.{x}." for x in range(freeze)]  # layers to freeze
+    freeze = [f"model.{x}." for x in range(freeze)]  
     for k, v in model.named_parameters():
-        v.requires_grad = True  # train all layers
+        v.requires_grad = True  
         if any(x in k for x in freeze):
             print(f"freezing {k}")
             v.requires_grad = False
