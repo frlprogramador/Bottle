@@ -10,4 +10,4 @@ __negrito__
 
 ~~riscado~~
 
-_ __negrito riscado__ _
+** _negrito italico_ **
