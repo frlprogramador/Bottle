@@ -1,0 +1,7 @@
+path: train/trainFiles
+train: images/train 
+val: images/val 
+
+names:
+  0: BICO
+  1: TAMPA

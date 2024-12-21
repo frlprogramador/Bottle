@@ -112,5 +112,13 @@ Foi gerado um vídeo dando uma explicação simples do aplicativo de testes no s
 
 ## 6. Treinamento
 
+O treinamento foi feito através do YOLO. Devido a limitação de tempo, se treinou com poucas imagens. Seria interessante rotular mais imagens e retreinar.
 
-sss
+O treinamento foi bem simples, com pouco código, através da utilização de 30 épocas. O resultado alcançado foi rasoavel, podendo melhorar muito com treinamento com um dataset maior.
+
+Futuramente, pode-se pensar em gerar um classificador através de modelos pré-treinados com a execução de transfer learning para garantir que a tampa se encontra na garrafa a qual foi detectado o bico ou então a extração de outras caracteristicas com modelos de classificação tradicional'
+
+O arquivo que de configuração do treinamento se encontra no seguinte endereço:
+> train\yoloBottleTrain.yaml
+
+Dentro da pasta **train\trainFiles** se encontra os arquivos de imagens e labels para treinamento e validação. 

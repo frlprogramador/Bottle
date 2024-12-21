@@ -162,3 +162,4 @@ content/models/garrafa.pt
 /DotNET/ConsomeAPIBottle/.vs
 /DotNET/ConsomeAPIBottle/ConsomeAPIBottle/bin
 /DotNET/ConsomeAPIBottle/ConsomeAPIBottle/obj
+train/yolo11x.pt
