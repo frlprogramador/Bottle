@@ -34,6 +34,10 @@ Foi utilizado os seguintes parametros:
 ##### **LOG_FILE_PATH** 
 > Neste parâmetro, deve ser colocado o caminho para salvar o arquivo de Log da API
 
+##### **LOG_DISABLE** 
+> Neste parâmetro, podemos desabilitar a geração do LOG quando o valor dele é 1. Em qualquer outro caso, o LOG fica habilitado.
+
+
 
 ### Exemplo do arquivo de configuração (.env):
 
@@ -43,6 +47,7 @@ MODEL=content\models\garrafa.pt
 TH_CONFIDENCE_CAP = 0.65
 TH_CONFIDENCE_BOTTLE = 0.50
 LOG_FILE_PATH = bottle.log 
+LOG_DISABLE = 1
 ```
 
 
