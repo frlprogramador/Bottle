@@ -36,6 +36,22 @@ Foi utilizado os seguintes parametros:
 
 
 
+## 3. Retorno da API
+
+A API retorna o seguinte JSon:
+```
+{
+    "Bottle_Status": "close",
+    "Confidence": 0.8229029774665833,
+    "ElapsedTime": "0:00:00.339860",
+    "BoxCap": [
+        146.03700256347656,
+        107.1209945678711,
+        183.2393035888672,
+        132.18280029296875
+    ]
+}
+```
 
 
 _italico_
