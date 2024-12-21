@@ -17,12 +17,12 @@ class BottleResponse(Resource):
     def post(self):
         self.logger.info("Post Received")
         image = request.files['image']
-        self.logger.debug("Image [File Name]: " + image.filename)
+        self.logger.info("Image [File Name]: " + image.filename)
         
         self.logger.info("Before  imageValidation: " + image.filename)
 
         (valid, error) = self.imageValidation(image)
-        self.logger.debug("After  imageValidation: (valid, error): (" + str(valid) + ", "  + str( error.Error if error != None else "" ) + ")")
+        self.logger.info("After  imageValidation: (valid, error): (" + str(valid) + ", "  + str( error.Error if error != None else "" ) + ")")
 
         if valid == False:
             self.logger.error("Response: (400) -> " + json.dumps(error.__dict__) )
@@ -34,7 +34,7 @@ class BottleResponse(Resource):
             ) 
         try:
             im = Image.open(image)
-            self.logger.debug("Open Image size: " + str(im.size))
+            self.logger.info("Open Image size: " + str(im.size))
             
             status, confidence, existBottle, elapsed, boxCap = self.model.predict(im)
             self.logger.info("After Predict (status, confidence, existsBottle, elapsed): " + str(status) + ", " + str(confidence) + ", " + str(existBottle) + ", " + str(elapsed) + ")")

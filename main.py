@@ -6,7 +6,7 @@ import os
 from api.resources.bottle_responses import BottleResponse
 from bottle.models.yolo_bottle import YoloBottle
 import logging
-
+import logging.config
 app = Flask(__name__)
 api = Api(app)
 
@@ -22,8 +22,18 @@ def main():
     app.run(debug=True, port=os.environ['PORT'])
 
 def configLog():
-    logger = logging.getLogger(__name__)
     logging.basicConfig(filename=os.environ["LOG_FILE_PATH"], encoding='utf-8', level=logging.DEBUG)
+    if(os.environ["LOG_DISABLE"] == '1'):
+        logging.config.dictConfig({
+            'version': 1,
+            'disable_existing_loggers': True,
+            'loggers': { '': {'level': 'DEBUG'} }
+        })
+    
+    logger = logging.getLogger(__name__)
+    
+
+    
     logger.info('Config Log Finished')
     return logger
 
