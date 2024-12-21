@@ -35,8 +35,18 @@ Foi utilizado os seguintes parametros:
 > Neste parâmetro, deve ser colocado o caminho para salvar o arquivo de Log da API
 
 
+### Exemplo do arquivo de configuração (.env):
 
-## 3. Retorno da API
+```
+PORT = 2525
+MODEL=content\models\garrafa.pt
+TH_CONFIDENCE_CAP = 0.65
+TH_CONFIDENCE_BOTTLE = 0.50
+LOG_FILE_PATH = bottle.log 
+```
+
+
+## 4. Retorno da API
 
 A API retorna o seguinte JSon:
 ```
