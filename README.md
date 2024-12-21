@@ -109,3 +109,8 @@ Foi gerado um vídeo dando uma explicação simples do aplicativo de testes no s
 
 >  [link do vídeo no youtube](https://1drv.ms/u/c/25c1ffdcff23db20/EbEWmFG5FFJGsEz9eP7CsE4BGWlUllcvYwr-tc1V88d-RQ?e=T1No8n)
 
+
+## 6. Treinamento
+
+
+sss
