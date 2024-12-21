@@ -89,10 +89,14 @@ A API retorna o seguinte JSon:
 ```
 
 
-_italico_
 
-__negrito__
+## 5. Aplicativo de testes
 
-~~riscado~~
+Foi desenvolvido uma aplicação windows em .NET para testar o consumo da API. 
 
-**_negrito italico_**
+Esta aplicação possui seu código publicado dentro da pasta DotNET do repositório.
+
+Foi gerado um vídeo dando uma explicação simples do aplicativo de testes no seguinte link:
+
+>  [link do vídeo no youtube](https://1drv.ms/u/c/25c1ffdcff23db20/EbEWmFG5FFJGsEz9eP7CsE4BGWlUllcvYwr-tc1V88d-RQ?e=T1No8n)
+
