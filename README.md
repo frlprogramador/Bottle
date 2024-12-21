@@ -49,6 +49,26 @@ TH_CONFIDENCE_BOTTLE = 0.50
 LOG_FILE_PATH = bottle.log 
 LOG_DISABLE = 1
 ```
+## 3. Consumindo API
+
+O EndPoint da API gerada deve ser executada através de POST.
+
+A url deve estar na seguinte formatação:
+> http://endereço:porta//bottle
+
+Um exemplo desta url executada localmente:
+> http://localhost:2525/bottle
+
+
+No BODY da requisição, deve-se mandar a imagem de forma binária com o seguinte Key: **image**
+
+Podemos ver um exemplo executando no Postman:
+
+
+
+![](images\postman.png)
+
+
 
 
 ## 4. Retorno da API
