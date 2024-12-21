@@ -17,8 +17,12 @@ Utilizamos um arquivo Dotenv (.env) para configurar parâmetros na API. Este arq
 
 Foi utilizado os seguintes parametros:
 
-* PORT = 2525
-* MODEL=content\models\garrafa.pt
+PORT
+> Neste parâmetro, deve ser colocado a porta para acesso ao EndPoint da API
+
+MODEL
+> Neste parâmetro, deve ser colocado o caminho do arquivo do modelo treinado que foi baixado do link.
+
 * TH_CONFIDENCE_CAP = 0.65
 * TH_CONFIDENCE_BOTTLE = 0.50
 * LOG_FILE_PATH = bottle.log 
